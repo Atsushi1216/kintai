@@ -16,5 +16,15 @@ public class AttendanceService {
 	@Autowired
 	HttpSession session;
 
+	// 出勤登録処理
+
+	// 退勤登録処理
+
+	// 休憩開始時間登録
+
+	// 休憩終了時間登録
+
+	// 編集のためID一件取得
+
 
 }
