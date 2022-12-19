@@ -66,6 +66,7 @@ public class LoginController {
 
 		String strSha256 = String.valueOf(sha256);
 
+
 		user = userService.findLoginUser(user.getUsername(), strSha256);
 
 		if(user == null) {
