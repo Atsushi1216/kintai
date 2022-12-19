@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ログイン画面</title>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}">
+		<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+	</head>
+	<body class="thisbody">
+		<th:block th:each="errorMessages : ${errorMessages}">
+			<p class="error" >・<th:block th:text="${errorMessages}"></th:block></p>
+		</th:block>
+		<div class="thislogin">
+			<form th:action="@{/postLogin}" method="post" th:object="${user}">
+				<label for="username">ユーザー名: </label>
+				<input type="username" name="username" />
+				<br />
+				<label for="password">パスワード: </label>
+				<input name="password" type="password" />
+				<br />
+				<input type="submit" value="ログイン" class="btn btn-primary"/>
+				<br />
+			</form>
+			<a href="/signup">新規登録</a>
+		</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TOP画面</title>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}">
+</head>
+<body>
+<th:block th:if="${loginUser != null}">
+<p>Hello
+<th:block th:text="${loginUser.username}">さん！
+
+</th:block></th:block>
+</p>
+<span>やほー＾＾<br />
+<th:block th:if="${loginUser == null}">
+<a href="/login" class="btn btn-dark">ログイン</a>
+<a href="/signup" class="btn btn-primary">新規登録</a>
+</th:block></th:block>
+</span>
+</body>
+</html>

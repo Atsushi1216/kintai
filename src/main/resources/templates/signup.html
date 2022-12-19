@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ユーザー登録</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}">
+</head>
+<body class="signbody">
+	<th:block th:each="errorMessages : ${errorMessages}">
+		<p class="error" >・<th:block th:text="${errorMessages}"></th:block></p>
+	</th:block>
+	<div class="sign">
+		<form th:action="@{/postSignup}" method="post" th:object="${formModel}">
+			<label for="username">ユーザー名: </label>
+			<input type="text" name="username" th:value="*{username}" /><br />
+			<label for="password">パスワード: </label>
+			<input name="password" type="password" /><br />
+			<label for="password2">パスワード確認用: </label>
+			<input name="password2" type="password" /><br />
+			<input type="submit" value="登録" class="btn btn-primary" /><br />
+		</form>
+		<form action="/top">
+			<input type="submit" value="戻る" class="btn btn-link" />
+		</form>
+	</div>
+</body>
+</html>
