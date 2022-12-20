@@ -1,10 +1,14 @@
 package com.example.service;
 
+import java.sql.Timestamp;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.entity.Attendance;
 import com.example.repository.AttendanceRepository;
 
 @Service
@@ -17,6 +21,14 @@ public class AttendanceService {
 	HttpSession session;
 
 	// 出勤登録処理
+	public List<Attendance> findCategoryAttendance(Integer id, Integer categoryId, Timestamp startTime, Timestamp endTime) {
+		return attendanceRepository.findByUserIdAndCategoryIdAndStartTimeBetweenOrderByEndTimeDesc(id, categoryId, startTime, endTime);
+	}
+
+	public void saveAttendance(Attendance attendance) {
+		attendanceRepository.save(attendance);
+	}
+
 
 	// 退勤登録処理
 

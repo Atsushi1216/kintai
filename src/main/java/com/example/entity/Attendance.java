@@ -18,7 +18,10 @@ public class Attendance {
 	private int id;
 
 	@Column(name="user_id")
-	private String userId;
+	private Integer userId;
+
+	@Column(name="category_id")
+	private Integer categoryId;
 
 	@Column(name = "start_time", insertable = false, updatable = true)
 	private Timestamp startTime;
@@ -46,12 +49,20 @@ public class Attendance {
 		this.id = id;
 	}
 
-	public String getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	public Integer getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public Timestamp getStartTime() {
