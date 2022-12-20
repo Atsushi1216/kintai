@@ -35,6 +35,9 @@ public class Attendance {
 	@Column(name = "rest_end_time", insertable = false, updatable = true)
 	private Timestamp restEndTime;
 
+	@Column(name = "border_date", insertable = false, updatable = false)
+	private Timestamp borderDate;
+
 	@Column(name = "created_time", insertable = false, updatable = false)
 	private Timestamp createdTime;
 
@@ -95,6 +98,14 @@ public class Attendance {
 
 	public void setRestEndTime(Timestamp restEndTime) {
 		this.restEndTime = restEndTime;
+	}
+
+	public Timestamp getBorderDate() {
+		return borderDate;
+	}
+
+	public void setBorderDate(Timestamp borderDate) {
+		this.borderDate = borderDate;
 	}
 
 	public Timestamp getCreatedTime() {
